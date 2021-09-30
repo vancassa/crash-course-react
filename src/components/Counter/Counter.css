@@ -1,0 +1,8 @@
+.counter {
+  margin-bottom: 3rem;
+}
+
+.counter__count {
+  font-size: 1.2rem;
+  margin: 1rem;
+}
