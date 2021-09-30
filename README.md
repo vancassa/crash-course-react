@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Crash Course React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Creating a new React application
 
-## Available Scripts
+Use `create-react-app` to bootstrap your initial setup.
 
-In the project directory, you can run:
+```
+npx create-react-app <project-name>
+```
 
-### `yarn start`
+Or if you want to install create-react-app into your computer:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm install -g create-react-app
+create-react-app <project-name>
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Starting the React application
 
-### `yarn test`
+In the root, run `yarn start` to start your application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## React's ecosystem
 
-### `yarn build`
+[React's official guide](https://reactjs.org/docs/getting-started.html) is a good place to start learning about React.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Styling
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+While you can create a dedicated CSS file and import it into your component, there are other ways to do your styling.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+One popular method is to use CSS in JS. [styled-components](https://styled-components.com/) is the most popular CSS in JS library.
 
-### `yarn eject`
+### Component Library
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Instead of creating components from scratch, you can use existing component libraries out there. The most popular component library is [Material UI](https://material-ui.com/) and [Ant Design](https://ant.design/). These component libraries might have their own way of styling the component.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Routing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To control the routes (e.g. what component to be shown on `/home` or `/about`), the most popular library is [react-router](https://reactrouter.com/).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### State Management Library
 
-## Learn More
+When your application gets big, sometimes a state management library is needed. The most popular state management library is [Redux](https://redux.js.org/).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If React hook `useState` is used for local state management (the state is only available within the component), Redux is used for global state management (the state is available for all components to access).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+There are some people who are against Redux and prefer to use other React hooks to achieve the same thing, by using `useReducer` and `useContext`. There are multiple pros and cons surrounding it.
 
-### Code Splitting
+### Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[jest](https://jestjs.io/) and [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/) is the most popular combination to test your React application.
 
-### Analyzing the Bundle Size
+## Building and deploying React application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+In the root, run:
 
-### Making a Progressive Web App
+```
+yarn build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+React will create a folder called `build` in the root. You can then transfer the content of this `build` folder into your server.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For example, in [Neocities](https://neocities.org/), you can upload the content of this `build` folder. Your React application will be available there.
